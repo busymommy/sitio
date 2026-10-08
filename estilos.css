@@ -1,0 +1,54 @@
+/* Estilos compartidos de busymommy.app: mismos colores y letras que la app */
+:root{
+  --ground:#FFF3DA; --paper:#FFFFFF; --ink:#2B1F38; --muted:#6E6376; --line:#EFE3CB;
+  --honey:#F6C445; --honey-soft:#FDEBC2; --plum:#D94873; --plum-soft:#FBE3EA; --ph:#FFE58A; --ph-ink:#5A4300;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#120E16; --paper:#1E1825; --ink:#F6EFE2; --muted:#B3A8BA; --line:#3A3146;
+  --honey:#F6C445; --honey-soft:#3B3019; --plum:#F0739A; --plum-soft:#4A2233; --ph:#5A4A12; --ph-ink:#FFE9A8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#120E16; --paper:#1E1825; --ink:#F6EFE2; --muted:#B3A8BA; --line:#3A3146;
+  --honey:#F6C445; --honey-soft:#3B3019; --plum:#F0739A; --plum-soft:#4A2233; --ph:#5A4A12; --ph-ink:#FFE9A8; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;padding-inline:16px;padding-block:20px 56px}
+.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+
+/* Barra de arriba: marca + ligas a las otras páginas */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:800;font-size:20px}
+.brand img{width:36px;height:36px;border-radius:9px}
+.top nav{display:flex;gap:16px;font-size:14.5px;font-weight:600}
+.top nav a{color:var(--muted);text-decoration:none}
+.top nav a:hover,.top nav a:focus-visible,.top nav a[aria-current]{color:var(--plum)}
+
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,38px);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.2;margin:0 0 6px;text-wrap:balance}
+h3{font-size:15px;margin:14px 0 4px;font-weight:700}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:20px}
+li{margin-bottom:4px}
+a{color:var(--plum)}
+.sub{color:var(--muted);margin:4px 0 0;font-size:14px}
+.lead{font-size:17px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px}
+.card > :last-child{margin-bottom:0}
+.note{background:var(--honey-soft);border-radius:14px;padding:12px 14px}
+.note > :last-child{margin-bottom:0}
+.draft{background:var(--plum-soft);border:1.5px dashed var(--plum);border-radius:16px;padding:14px 16px;font-size:14px;line-height:1.5}
+.draft b{color:var(--plum)}
+mark.ph{background:var(--ph);color:var(--ph-ink);border-radius:5px;padding:0 4px;font-weight:600}
+.btn{display:inline-block;background:var(--plum);color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 20px}
+.btn:hover,.btn:focus-visible{filter:brightness(1.08)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:12px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:28px;height:28px;border-radius:50%;background:var(--honey);color:#2B1F38;font-weight:800;display:grid;place-items:center;font-size:14px}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+details:last-of-type{border-bottom:0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0}
+.foot{color:var(--muted);font-size:13.5px;text-align:center;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.foot a{color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
